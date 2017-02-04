@@ -26,9 +26,9 @@ var randomization = function(){
        var guest = slideTraced(guestPosition);
    var left = blank.coOrdinate;
    var right = guest.coOrdinate;
-      if (left % root == 0 && right % root == 1){
+      if (left % root === 0 && right % root === 1){
       i--;
-      } else if (left % root == 1 && right % root == 0){
+      } else if (left % root === 1 && right % root === 0){
       i--;
       } else {
       var swPos = guest.getAttribute("style");
@@ -53,9 +53,9 @@ var changePosition = function(){
   var right = blank.coOrdinate;
   var possibility = left - right;
   if (possibility == 1 || possibility == -1 || possibility == root || possibility == -root){ 
-    if (left % root == 1 && right % root == 0){
+    if (left % root === 1 && right % root === 0){
       return false;
-    } else if (left % root == 0 && right % root == 1) {
+    } else if (left % root === 0 && right % root === 1) {
       return false;
     } else {
       var swapped = this.coOrdinate;
@@ -74,47 +74,15 @@ for (var i=0; i<slide.length; i++){
   slide[i].addEventListener("click", changePosition);
 }
 
-//======================================================
-// functions for drawer opening and closing  -----------
 
-var drawer = "closed";
-var drawerPane = document.getElementById("drawer");
-var menuButton = document.getElementById("menu");
-var gameField = document.getElementById("gamefield");
-var resetButton = document.getElementById("reset");
-var gameButton = document.getElementById("game");
-var settingButton = document.getElementById("settings");
-var scoreButton = document.getElementById("scores");
-var helpButton = document.getElementById("help");
-var aboutButton = document.getElementById("about");
-var exitButton = document.getElementById("exit");
-
-
-var pageHeight = "height:" + window.innerHeight + "px";
-var pageWidth = window.innerWidth;
-var drawerOption = function(){
-  if (drawer == "closed"){
-  drawerPane.setAttribute("style","left:0%;");
-  gameField.setAttribute("style","margin-left:65%;");
-  menuButton.setAttribute("style","background-position: -100% 0%;");
-  drawer = "opened";
-  } else if (drawer == "opened"){
-  drawerPane.setAttribute("style","left:-65%;");
-  gameField.setAttribute("style","margin-left:0%;");
-    menuButton.setAttribute("style","background-position: 0% 0%;");
-  drawer = "closed";
-  }
-};
-
-
-menuButton.addEventListener("click", drawerOption);
-resetButton.addEventListener("click", randomization);
-
-
-var exit = function() {
-  if (confirm("Are you sure to exit ?")){
-    window.close();
+var currently;
+function shuffleAndReset() {
+  if (currently === undefined) {
+    randomization();
+    currently = "shuffled";
+  } else {
+    location.reload(true);
   }
 }
 
-exitButton.addEventListener("click",exit);
+document.body.addEventListener("dblclick", shuffleAndReset);

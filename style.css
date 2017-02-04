@@ -1,161 +1,52 @@
+/*importing fonts*/
+@import 'https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i';
+
 * {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
-  font-family: Fira sans;
   cursor: default;
 }
 
 body {
-  background-color: #424F5A;
-  color: white;
-  overflow: hidden;
+  background-color: transparent;
+  font-family: monospace;
 }
 
-.drawer {
-  background-color: rgba(0, 0, 0, 0.5);
-  position: absolute;
-  left: -65%;
-  top: 0%;
-  width:65%;
-  overflow-x: hidden;
-  height: 100%;
-  box-shadow: -7px 0 9px -7px black inset;
-  transition: .5s;
+h1 {
+  margin-bottom: 10px;
 }
 
-.drawer ul li {
-  background-color: rgba(0, 0, 0, 0.2);
-  list-style: none;
-  font-size: 6vw;
-  line-height: 8vw;
-  padding: 3vw;
-  border-bottom: 1px solid black;
-  padding-left:10vw;
+.boundary {
+  width: 500px;
+  height: 500px;
 }
 
-.drawer ul li:first-child::before {
-  content: "";
-  background-size: 100%;
-  background-image: url(icons/icon_512.png);
-  width: 12vw;
-  height: 12vw;
-  float: left;
-  margin-right: 2vw;
+#controls {
+  width: 600px;
+  height: 120px;
 }
 
-.drawer ul li:first-child {
-  background-color: rgba(0, 0, 0, 0.4);
-  font-size: 8vw;
-  padding-left: 6vw;
-  line-height: 12vw;
+#puzzle {
+  display: block;
+  width: 600px;
+  height: 220px;
+  margin: 30px 0;
+
 }
 
-.drawer ul li:last-child {
-  border-bottom: none;
-}
-
-
-
-#gamefield {
-    width: 100vw;
-    min-width: 320px;
-    height: 100hv;
-  transition: .5s;
-}
-
-.header {
-  background: rgba(0, 0, 0, 0.3);
-  width:96%;
-  height: 14vw;
-  padding: 1%;
-  margin: 2% auto;
-  font-size: 8vw;
-  line-height: 13vw;
-}
-
-.status_box {
-  background: rgba(0, 0, 0, 0.4);
-  width:96%;
-  padding: 3vw;
-  margin: 2vh auto;
-  font-size: 2.5vh;
-  line-height: 4vh;
-}
-
-progress {
-  height: 2.5vh;
-  width: 100%;
-  border: none;
-  color: black;
-}
-
-#menu, #reset {
-  width: 12vw;
-	height: 12vw;
-	float: left;
-	background-image: url("images/menu_icons.png");
-  background-size: 300%;  
-}
-
-#reset {
-	background-position: 100% 0;
-	float: right;
-}
-
-#game::before, #scores::before, #settings::before, #help::before, #about::before, #exit::before {
-  content: "";
-  height: 8vw;
-  width: 8vw;
-  float: left;
-  margin-right: 2vw;
-  background-image: url("images/navigation_icons.png");
-  background-size: 600%;
-}
-
-#scores::before {
-  background-position: -100% 0;
-}
-#settings::before {
-  background-position: -200% 0;
-}
-#help::before {
-  background-position: -300% 0;
-}
-#about::before {
-  background-position: -400% 0;
-}
-#exit::before {
-  background-position: -500% 0;
-}
-
-#settingsField {
-  
-}
-
-#scoresField {
-  
-}
-
-#helpField {
-  
-}
-
-#aboutField {
-  
-}
 
 .board {
-  background: rgba(0, 0, 0, 0.4);
   position: relative;
-  width: 90%;
-  height: 90vw;
-  margin: 4vw auto;
+  width: 100vw;
+  height: 100vw;
   border: 1px solid black;
   z-index:0;
   box-shadow: 0px 0px 7px black inset;
   overflow: hidden;
-  }
+  max-width: 500px;
+  max-height: 500px;  
+}
 
 .box {
   position: absolute;
@@ -163,14 +54,15 @@ progress {
   width: 20%;
   float: left;
   transition: 0.5s;
-  background-image: url("images/firefox.jpg");
+  background-image: url("images/firefox.svg");
   box-shadow: 0px 0px 7px black;
   background-size: 500%;
 }
+
 .border {
-    width: 100%;
-    height: 100%;
-    border: 1px solid black;
+  width: 100%;
+  height: 100%;
+  border: 1px solid black;
 }
 
 div.one {
@@ -195,7 +87,7 @@ div.five {
 }
 
 .five .border {
-   border: none;
+  border: none;
 }
 
 div.six {
@@ -277,9 +169,3 @@ div.twenty_four {
 div.twenty_five {
   background-position: -400% -400%;  
 }
-
-
-/*--------------------------------
-               ||
-               ||
---------------------------------*/
