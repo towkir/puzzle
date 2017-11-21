@@ -34,6 +34,23 @@ h1 {
   height: 120px;
 }
 
+#puzzle table td a {
+  padding: 1px 5px;
+  background: rgba(128, 128, 128, 0.3);
+  border-radius: 2px;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+#puzzle table td a:hover,
+#puzzle table td a:focus,
+#puzzle table td a:active {
+  background: rgba(128, 128, 128, 0.5);
+  outline: none;
+  color: inherit;
+}
+
 .board {
   position: relative;
   width: 100vw;
