@@ -101,7 +101,6 @@ var randomization = function () {
 //calls randomization function on loading window and scatters the slides...
 //window.addEventListener("load", randomization);
 
-
 //this is a function for changing slide positions on user click....
 var changePosition = function () {
     var left = this.dataset.tempPosition;
@@ -135,7 +134,7 @@ var changePosition = function () {
         }
     }
 
-    if ( minimumShuffle === 1 && matched === 25) {
+    if (minimumShuffle === 1 && matched === 25) {
         (function () {
             modalParent.style.opacity = '1';
             modalParent.style.zIndex = '100';
@@ -146,7 +145,6 @@ var changePosition = function () {
         })();
     }
 };
-
 
 //applies changePosition function on all of the slides...
 for (var l = 0; l < slideEl.length; l++) {
