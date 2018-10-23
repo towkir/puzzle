@@ -93,7 +93,7 @@ h1 {
   transition: opacity .3s ease-in-out;
 }
 
-body #modal-container .custom-modal {
+#modal-container .custom-modal {
   background-color: #fff;
   position: fixed;
   min-width: 300px;
